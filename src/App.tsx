@@ -2,7 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import MarkdownEditor from "./md-editor";
-import { createTheme, ThemeProvider } from "@material-ui/core";
+import { Container, createTheme, ThemeProvider } from "@material-ui/core";
 
 const theme = createTheme();
 
@@ -30,7 +30,9 @@ a = int(5)
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <MarkdownEditor children={markdown} />
+      <Container>
+        <MarkdownEditor children={markdown} />
+      </Container>
     </ThemeProvider>
   );
 }

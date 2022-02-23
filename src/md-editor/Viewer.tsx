@@ -59,7 +59,7 @@ const MarkdownViewer: FunctionComponent<MarkdownViewerProps> = ({
           return <Typography paragraph children={children} />;
         },
         a({ node, className, children, ...props }) {
-          return <Link children={children} />;
+          return <Link children={children} className={classes.link} />;
         },
         li({ node, className, children, ...props }) {
           return <Box component="li" mt={1} {...props} />;
@@ -99,7 +99,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing(2, 3),
     margin: 0,
-    borderLeftWidth: "5px",
+    borderLeftWidth: "4px",
     borderLeftStyle: "solid",
     borderLeftColor:
       theme.palette.type === "dark"
@@ -112,6 +112,9 @@ const useStyles = makeStyles((theme) => ({
     padding: "3px 7px",
     borderRadius: "5px",
   },
+  link: {
+    cursor: "pointer"
+  }
 }));
 
 /**
